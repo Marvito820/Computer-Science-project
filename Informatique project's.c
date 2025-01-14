@@ -4,7 +4,7 @@
 
 void princi();
 void singleplayer(int Min,int Max);
-void twoplayer();
+void twoPlayerMode();
 
 void singleplayer(int Min,int Max)
 {
@@ -36,8 +36,36 @@ void singleplayer(int Min,int Max)
     }
 }
 
-void twopl
+void twoPlayerMode()
+{
+    int Nombremystere=0,choix=0,i=1;
+    printf("Veuillez alors saisir le nombre mystere.\n");
+    if (scanf("%d", &Nombremystere) != 1) {
+        while (getchar() != '\n'); // Clear invalid input
+        printf("Entrée invalide. Veuillez recommencer.\n");
+        return;
+    }
+for (int i = 0; i < 30; i++) printf("\n");
+ printf("C'est au tour du Joueur 2 de deviner le nombre mystère.\n");
+   while (1) {
+        printf("Votre devinette : ");
+        if (scanf("%d", &guess) != 1) {
+            while (getchar() != '\n'); // Clear invalid input
+            printf("Entrée invalide. Veuillez entrer un nombre.\n");
+            continue;
+        }
 
+        if (guess < mysteryNumber) {
+            printf("C'est plus grand !\n");
+        } else if (guess > mysteryNumber) {
+            printf("C'est plus petit !\n");
+        } else {
+            printf("Bravo, vous avez trouvé le nombre mystère en %d coups !\n", attempts);
+            break;
+        }
+        i++;
+    }
+}
 void princi()
 {
 int choice,choice2;
