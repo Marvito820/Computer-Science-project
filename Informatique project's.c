@@ -38,3 +38,37 @@ do{
             }}while(choice2!=4);
             break;
     }
+void rh(int Min,int Max)
+{
+    int Nombremystere,choix,i=1;
+    srand(time(NULL));
+    Nombremystere = (rand() % (Max - Min + 1)) + Min;
+    printf("Veuillez alors tenter votre chance\n");
+    scanf("%d",&choix);
+    while(choix!=Nombremystere)
+    {
+        i++;
+
+    if (choix<Nombremystere)
+        {
+            if(choix<Min){
+        printf("Veuillez bien respecter l'intervalle choisi\n");
+        scanf("%d",&choix);}
+
+        if(choix>Max){
+      printf("Veuillez bien respecter l'intervalle choisi\n");
+      scanf("%d",&choix);}
+
+         printf("Le nombre est au dessus de ce que vous avez saisi\n");
+             scanf("%d",&choix);
+        }
+          else if(choix>Nombremystere)
+            {
+             printf("Le nombre est en dessous de ce que vous avez saisi\n");
+               scanf("%d",&choix);
+               }
+
+}
+    printf("Bravo, vous avez trouve le nombre mystere en %d coups\n",i);
+    return 0;
+}
